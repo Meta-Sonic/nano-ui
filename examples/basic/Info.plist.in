@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+
+	<key>CFBundleExecutable</key>
+	<string>${NANO_PLIST_EXECUTABLE_NAME}</string>
+
+	<key>CFBundleIconFile</key>
+	<string>${NANO_PLIST_ICON_FILE}</string>
+
+	<key>CFBundleIconName</key>
+	<string>${NANO_PLIST_ICON_NAME}</string>
+
+	<key>CFBundleIdentifier</key>
+	<string>${NANO_PLIST_BUNDLE_IDENTIFIER}</string>
+
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+
+	<key>CFBundleName</key>
+	<string>${NANO_PLIST_PRODUCT_NAME}</string>
+
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+
+	<key>CFBundleShortVersionString</key>
+	<string>${NANO_PLIST_SHORT_VERSION}</string>
+
+	<key>CFBundleVersion</key>
+	<string>${NANO_PLIST_VERSION}</string>
+
+	<key>CFBundleSupportedPlatforms</key>
+	<array>
+		<string>MacOSX</string>
+	</array>
+
+	<key>CFBundleGetInfoString</key>
+	<string>${NANO_PLIST_BUNDLE_INFO_STRING}</string>
+
+	<key>NSHumanReadableCopyright</key>
+	<string>${NANO_PLIST_COPYRIGHT}</string>
+
+	<key>NSPrincipalClass</key>
+	<string>${NANO_PLIST_NS_PRINCIPAL_CLASS}</string>
+
+	${NANO_PLIST_EXTRA_FIELDS}
+</dict>
+</plist>
+
+

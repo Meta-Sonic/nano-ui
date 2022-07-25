@@ -1,0 +1,39 @@
+<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>rvp</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>RevoiceProIcon</string>
+			<key>CFBundleTypeName</key>
+			<string>Revoice Pro</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>SyRP</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>NSDocumentClass</key>
+			<string>SessionDocument</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>vf</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string></string>
+			<key>CFBundleTypeName</key>
+			<string>Voice Factory</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>SyVf</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>NSDocumentClass</key>
+			<string>SessionDocument</string>
+		</dict>
+	</array>
