@@ -1,8 +1,11 @@
 cmake_minimum_required(VERSION 3.22.0)
 
+include(FetchContent)
+
+
 # Add nano cmake.
-execute_process(COMMAND wget -O - https://nano-cmake.onrender.com/nano.cmake OUTPUT_VARIABLE NANO_CMAKE ERROR_QUIET)
-cmake_language(EVAL CODE ${NANO_CMAKE})
+# execute_process(COMMAND wget -O - https://nano-cmake.onrender.com/nano.cmake OUTPUT_VARIABLE NANO_CMAKE ERROR_QUIET)
+# cmake_language(EVAL CODE ${NANO_CMAKE})
 
 project(nano-ui VERSION 1.0.0 LANGUAGES CXX)
 
@@ -13,12 +16,21 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 option(NANO_UI_BUILD_TESTS "Build tests" ON)
 option(NANO_UI_BUILD_EXAMPLES "Build examples" ON)
 
+# Fetch nano-common.
+if (IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/../nano-common")
+    set(FETCHCONTENT_SOURCE_DIR_NANO_COMMON "${CMAKE_CURRENT_SOURCE_DIR}/../nano-common")
+endif()
+
+FetchContent_Declare(nano_common GIT_REPOSITORY "https://github.com/Meta-Sonic/nano-common.git")
+FetchContent_MakeAvailable(nano_common)
+
 # nano-ui lib.
 set(NAME ui)
 set(MODULE_NAME nano-ui)
 
-nano_add_module(geometry)
-nano_add_module(graphics)
+# nano_add_module(geometry DEV_MODE)
+nano_add_module(graphics DEV_MODE)
+nano_add_module(objc DEV_MODE)
 
 set(NANO_UI_SRC_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/nano")
 
@@ -29,7 +41,7 @@ file(GLOB_RECURSE NANO_UI_SOURCE_FILES
 add_library(${MODULE_NAME} STATIC ${NANO_UI_SOURCE_FILES})
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${NANO_UI_SOURCE_FILES})
 target_include_directories(${MODULE_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_link_libraries(${MODULE_NAME} PUBLIC nano::geometry nano::graphics)
+target_link_libraries(${MODULE_NAME} PUBLIC nano::graphics nano::objc)
 
 add_library(nano::${NAME} ALIAS ${MODULE_NAME})
 

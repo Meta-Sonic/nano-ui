@@ -1,5 +1,6 @@
 #pragma once
-#include "nano/ui.h"
+
+#include <nano/ui.h>
 
 class Toolbar : public nano::view {
 public:
@@ -8,5 +9,10 @@ public:
   ~Toolbar() override;
 
 protected:
+  void on_mouse_down(const nano::event& evt) override;
+
+  void on_focus() override;
+  void on_unfocus() override;
+
   void on_draw(nano::graphic_context& gc, const nano::rect<float>& dirty_rect) override;
 };

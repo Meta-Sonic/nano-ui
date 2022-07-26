@@ -1,6 +1,6 @@
 #pragma once
 
-#include "nano/ui.h"
+#include <nano/ui.h>
 
 class MainWindow;
 

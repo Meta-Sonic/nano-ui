@@ -20,6 +20,6 @@ void MainWindow::on_frame_changed() {
 }
 
 void MainWindow::on_draw(nano::graphic_context& gc, const nano::rect<float>& dirtyRect) {
-  gc.set_fill_color(0xEEEEEEFF);
+  gc.set_fill_color(0x333333FF);
   gc.fill_rect(get_bounds());
 }
